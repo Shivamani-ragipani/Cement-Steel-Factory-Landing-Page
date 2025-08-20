@@ -92,7 +92,7 @@ yarn test
 
 ## 📸 Screenshots
 
-> _Add screenshots or GIFs here to showcase the UI and features._
+![Hero Section](public/assets/herosection.png)
 
 ## 📄 License
 
