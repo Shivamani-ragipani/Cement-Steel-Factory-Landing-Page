@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.network-section {
+  padding: 8rem 0;
+  background: linear-gradient(135deg, #0a0b1e 0%, #1a1b3a 50%, #080808 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1.2;
+  position: relative;
+}
+
+.highlight-text {
+  display: inline-block;
+  background: linear-gradient(135deg, #c8f542, #7dd87a);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 5s ease infinite, fadeInUp 1s ease forwards;
+  position: relative;
+}
+
+.highlight-text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  filter: blur(12px);
+  opacity: 0.6;
+  z-index: -1;
+  animation: gradientFlow 5s ease infinite;
+}
+
+/* Gradient animation */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Smooth fade-up reveal */
+@keyframes fadeInUp {
+  0% { 
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* .highlight-text:hover {
+  transform: scale(1.08);
+  text-shadow: 0 4px 20px rgba(200, 245, 66, 0.4);
+} */
+
+/* Stats section */
+.stats-text {
+  text-align: center;
+}
+
+.stats-large {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.stat-number {
+  display: block;
+  background: linear-gradient(135deg, #c8f542, #7dd87a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.stat-description {
+  color: white;
+}
+
+/* Floating posts container */
+.floating-posts {
+  position: relative;
+  height: 300px;
+}
+
+/* Post card with refined glassmorphism + metallic border */
+.post-card {
+  position: absolute;
+  width: 280px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 18px;
+  padding: 1.5rem;
+  transition: transform 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
+  animation: floatPost 8s ease-in-out infinite;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.post-card:hover {
+  transform: scale(1.06) translateY(-4px);
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 12px 28px rgba(200, 245, 66, 0.2);
+}
+
+@keyframes floatPost {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  75% {
+    transform: translateY(-15px);
+  }
+}
+
+.post-1 { top: 0; left: 10%; animation-delay: 0s; }
+.post-2 { top: 190px; right: 15%; animation-delay: 2s; }
+.post-3 { bottom: -60px; left: 20%; animation-delay: 4s; }
+.post-4 { bottom: 100px; right: 5%; animation-delay: 6s; }
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(200, 245, 66, 0.4);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.post-time {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.post-content {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  font-size: 12px;
+}
+
+.like, .comment {
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.like:hover, .comment:hover {
+  color: #c8f542;
+  transform: scale(1.1);
+}
+
+
+@keyframes floatPost {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 968px) {
+  .floating-posts { height: 400px; }
+  .post-card { width: 240px; }
+}
+
+/* Mobile responsiveness for NetworkSection */
+@media (max-width: 968px) {
+  .section-container {
+    padding: 0 1.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+  }
+
+  .highlight-text {
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+  }
+
+  .stats-large {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+
+  .stat-number {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .stat-description {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+  }
+
+  /* Floating posts adjustments */
+  .floating-posts {
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .post-card {
+    position: relative;
+    width: 90%;
+    max-width: 320px;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    animation: none;
+  }
+
+  .post-1 { top: 0; left: 10%; animation-delay: 0s; }
+.post-2 { top: 0; right: 15%; animation-delay: 2s; }
+.post-3 { bottom: -60px; left: 20%; animation-delay: 4s; }
+.post-4 { bottom: 100px; right: 5%; animation-delay: 6s; }
+
+  .post-header {
+    gap: 0.5rem;
+  }
+
+  .profile-pic {
+    width: 35px;
+    height: 35px;
+  }
+
+  .username {
+    font-size: 13px;
+  }
+
+  .post-time {
+    font-size: 11px;
+  }
+
+  .post-content {
+    font-size: 13px;
+  }
+
+  .post-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 11px;
+  }
+
+  .like, .comment {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .highlight-text {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+  }
+
+  .stats-large {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .stat-number {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
+  .stat-description {
+    font-size: clamp(0.85rem, 4vw, 1rem);
+  }
+
+  .post-card {
+    padding: 1rem;
+  }
+
+  .post-content {
+    font-size: 12px;
+  }
+
+  .post-actions {
+    font-size: 10px;
+    gap: 0.4rem;
+  }
+}
+

@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.fixed-nav {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.nav-capsule {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  background: rgba(15, 16, 30, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 0.6rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  width: 60px;
+  transition: width 1s ease;
+}
+
+.nav-capsule.expanded {
+  width: 600px;
+  padding: 0.6rem 1.2rem;
+}
+
+.nav-logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+  border-radius: 50%;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.5s ease;
+  transition-delay: calc(var(--delay) * 0.15s);
+}
+
+.nav-capsule.expanded .nav-links li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #c8f542;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #c8f542, #7dd87a);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.join-btn {
+  background: linear-gradient(135deg, #c8f542, #7dd87a);
+  color: #0a0b1e;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  transform: translateX(20px);
+  transition-delay: calc(var(--delay) * 0.15s);
+  white-space: nowrap;
+}
+
+.nav-capsule.expanded .join-btn {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.join-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(200, 245, 66, 0.3);
+}
+
+/* Mobile Responsive Header CSS */
+@media (max-width: 1024px) {
+  /* Reduce expanded capsule width for tablets */
+  .nav-capsule.expanded {
+    width: 90%;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+  }
+
+  .nav-logo img {
+    height: 35px;
+  }
+
+  .join-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8rem;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+
+  /* Show nav-links when mobile menu is open */
+  .nav-capsule.mobile-open .nav-links {
+    opacity: 1;
+    max-height: 400px; /* enough to show all links */
+  }
+
+  .nav-links li {
+    transform: translateX(0);
+    opacity: 1;
+    transition-delay: 0s;
+  }
+
+  
+}
+
+
+@media (max-width: 480px) {
+  .nav-capsule.expanded {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .nav-logo img {
+    height: 30px;
+  }
+
+  .join-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+}
+
