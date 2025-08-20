@@ -92,7 +92,7 @@ yarn test
 
 ## 📸 Screenshots
 
-![Hero Section](public/assets/herosection.png)
+![Hero Section](/public/assets/herosection.png)
 
 ## 📄 License
 
