@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./Footer.css";
-import { FaApple, FaGooglePlay, FaTiktok, FaInstagram, FaTwitter, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FaApple, FaGooglePlay, FaGithub, FaInstagram, FaTwitter, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
   const logoRef = useRef(null);
@@ -109,11 +109,11 @@ const Footer = () => {
       <div className="footer-bottom">
         <p>©2024 ShivaSteels. All rights reserved.</p>
         <div className="footer-socials">
-          <FaTiktok />
-          <FaInstagram />
+          <a href="https://github.com/Shivamani-ragipani" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+          <a href="https://www.instagram.com/shivamani-ragipani?igsh=NXFqaHBpZ2JsczV1" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
           <FaTwitter />
           <FaFacebookF />
-          <FaLinkedinIn />
+          <a href="https://www.linkedin.com/in/shivamani-ragipani/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
         </div>
       </div>
     </footer>

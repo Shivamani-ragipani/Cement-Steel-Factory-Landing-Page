@@ -153,6 +153,11 @@
   padding-top: 1rem;
 }
 
+.footer-bottom a {
+  color: white;
+  transition: color 0.3s;
+}
+
 .footer-socials {
   display: flex;
   gap: 1rem;
